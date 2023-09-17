@@ -20,9 +20,9 @@ var bus = Bus.Factory.CreateUsingRabbitMq(cfg =>
 
 
 
-bus.StartAsync();
+await bus.StartAsync();
 
 Console.WriteLine("Listening for Register Demand commands.. \n" +"Press enter to exit");
 Console.ReadLine();
 
-bus.StopAsync();
+await bus.StopAsync();

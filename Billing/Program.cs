@@ -12,7 +12,6 @@ var bus = Bus.Factory.CreateUsingRabbitMq(cfg =>
     });
     cfg.ReceiveEndpoint(RabbitMqConsts.BillingServiceQueue, ep =>
     {
-
         ep.Consumer<OrderPlacedEventConsumer>();
     });
 

@@ -2,7 +2,7 @@
 using Messages;
 
 
-public class ShippingPolicy : 
+public class ShipOrderEventConsumer : 
     IConsumer<OrderPlaced>,
     IConsumer<OrderBilled>
 {

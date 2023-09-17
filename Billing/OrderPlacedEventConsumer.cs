@@ -8,5 +8,10 @@ public class OrderPlacedEventConsumer : IConsumer<OrderPlaced>
         var message = context.Message;
         await Console.Out.WriteLineAsync($"Received OrderPlaced, " +
             $"OrderId = {message.OrderId} , UserId = {message.UserId} - Charging credit card...");
+        await context.Publish(new OrderBilled
+        {
+            OrderId = message.OrderId,
+            UserId = message.UserId,
+        });
     }
 }
